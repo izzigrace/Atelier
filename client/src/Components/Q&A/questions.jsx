@@ -119,6 +119,7 @@ export default function QuestionListContainer({product_id}) {
   // need to validate form and then send to api
   const onFormValidation = (data) => {
     const questionData = {...data, product_id}
+    console.log(questionData);
     axios.post(`/questions/questions/`, questionData)
       .then(() => console.log('successful posting questions'))
       .catch((error) => console.log('failed to post question', error));
